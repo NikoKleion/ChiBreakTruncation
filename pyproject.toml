@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chibreak"
+version = "0.1.0"
+description = "1D peaked circuits with exact statevector ground truth and an MPS with pluggable SVD truncation rules, benchmarked against top-chi on chi_break"
+readme = "README.md"
+license = {file = "LICENSE.md"}
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+keywords = ["quantum", "peaked-circuits", "matrix-product-states", "truncation", "quantum-advantage"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+chibreak = "chibreak.experiments:main"
+
+[tool.setuptools]
+packages = ["chibreak"]
